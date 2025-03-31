@@ -21,10 +21,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} antialiased p-2 md:p-6 lg:px-12 space-y-6`}
+        className={`${inter.className} antialiased md:p-6 lg:px-12 space-y-6`}
       >
         <Header />
-        {children}
+        <div className="p-4">{children}</div>
       </body>
     </html>
   );

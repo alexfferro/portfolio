@@ -6,6 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import { useRef, useState } from "react";
+import { Menu } from "lucide-react";
 
 const Alexandria = localFont({
   src: "../fonts/alexandria.ttf",
@@ -37,16 +38,18 @@ export function Header() {
     <div className="flex flex-col gap-6 items-center sm:flex-row-reverse sm:justify-between">
       {/* Header Mobile */}
       <nav
-        className={`${Alexandria.className} w-full relative p-2 flex flex-col sm:hidden space-y-6 items-center justify-center`}
+        className={clsx(
+          Alexandria.className,
+          "w-full p-2 flex flex-col sm:hidden space-y-6 items-center justify-center  bg-neutral-900",
+          isMenuOpen ? "relative" : "fixed top-0 z-1 "
+        )}
       >
-        <div className="flex items-center w-full justify-evenly">
+        <div className="flex items-center w-full justify-between">
           <div
-            className="cursor-pointer w-8 h-5 flex flex-col justify-between hover:brightness-90"
+            className="cursor-pointer hover:brightness-90"
             onClick={HandleToggleMenu}
           >
-            <span className="block h-0.5 bg-gray-500 rounded"></span>
-            <span className="block h-0.5 bg-gray-500 rounded"></span>
-            <span className="block h-0.5 bg-gray-500 rounded"></span>
+            <Menu size={24} />
           </div>
           {activeLink && (
             <Link
@@ -59,7 +62,6 @@ export function Header() {
             </Link>
           )}
         </div>
-
         {isMenuOpen &&
           LINKS.map(({ href, label }) => (
             <Link
@@ -95,13 +97,16 @@ export function Header() {
           </Link>
         ))}
       </nav>
-      <Link href="/" className=" sm:w-32 md:w-48 ">
+      <Link
+        href="/"
+        className={clsx("sm:w-32 md:w-48", isMenuOpen ? "" : "mt-16 sm:mt-0")}
+      >
         <Image
           src={"/logo_dark.svg"}
           height={300}
           width={300}
           alt="Alex Ferro."
-          className="w-full h-auto"
+          className="w-full h-auto p-4 sm:p-2 md:p-0"
           priority
         />
       </Link>
