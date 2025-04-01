@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({
   weight: ["400", "600", "800"],
@@ -19,12 +20,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${inter.className} antialiased md:p-6 lg:px-12 space-y-6`}
-      >
-        <Header />
-        <div className="p-4">{children}</div>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.className} antialiased md:p-6 space-y-6`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          <div className="p-4 md:p-0">{children}</div>
+        </ThemeProvider>
       </body>
     </html>
   );
