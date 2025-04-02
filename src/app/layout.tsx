@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Footer } from "@/components/Footer";
 
 const inter = Inter({
   weight: ["400", "600", "800"],
@@ -29,7 +30,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
-          <div className="p-4 md:p-0">{children}</div>
+          <div className="p-4">{children}</div>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>

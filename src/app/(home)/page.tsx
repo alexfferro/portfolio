@@ -1,7 +1,8 @@
 import { ProjectsCard } from "@/components/project-card";
 import { ServicesCard } from "@/components/service-card";
+import { TestimonialsCards } from "@/components/testimonials-card";
 import { Button } from "@/components/ui/button";
-import { SERVICES, WORKS } from "@/lib/constants";
+import { SERVICES, TESTIMONIALS, WORKS } from "@/lib/constants";
 import Image from "next/image";
 
 export default function Home() {
@@ -69,6 +70,21 @@ export default function Home() {
         >
           See all projects
         </Button>
+      </div>
+      {/* Testimonials */}
+      <div className="flex flex-col gap-9">
+        <h2 className="text-center text-2xl font-medium">Testimonials</h2>
+        <div className="flex flex-col gap-9 justify-center items-center sm:flex-row sm:flex-wrap">
+          {TESTIMONIALS.map(({ id, avatar_url, name, origin, post }) => (
+            <TestimonialsCards
+              key={id}
+              avatar_url={avatar_url}
+              name={name}
+              origin={origin}
+              post={post}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

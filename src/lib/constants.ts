@@ -52,9 +52,40 @@ export const WORKS = [
   },
 ];
 
+export const TESTIMONIALS = [
+  {
+    id: "1",
+    avatar_url: "https://github.com/alexfferro.png",
+    post: "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet amet tristique ipsum aliquam. Vulputate dolor, nunc phasellus vestibulum turpis posuere turpis eget vel.”",
+    name: "Alex Ferro",
+    origin: "Dribble",
+  },
+  {
+    id: "2",
+    avatar_url: "https://github.com/alexfferro.png",
+    post: "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet amet tristique ipsum aliquam. Vulputate dolor, nunc phasellus vestibulum turpis posuere turpis eget vel.”",
+    name: "Alex Ferro",
+    origin: "Facebook",
+  },
+  {
+    id: "3",
+    avatar_url: "https://github.com/alexfferro.png",
+    post: "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet amet tristique ipsum aliquam. Vulputate dolor, nunc phasellus vestibulum turpis posuere turpis eget vel.”",
+    name: "Alex Ferro",
+    origin: "Pinterest",
+  },
+  {
+    id: "4",
+    avatar_url: "https://github.com/alexfferro.png",
+    post: "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet amet tristique ipsum aliquam. Vulputate dolor, nunc phasellus vestibulum turpis posuere turpis eget vel.”",
+    name: "Alex Ferro",
+    origin: "Twitter",
+  },
+];
+
 export const ROUTES = [
-  { path: "/", label: "PÁGINA INICIAL" },
-  { path: "/about", label: "SOBRE" },
-  { path: "/contacts", label: "CONTATOS" },
-  { path: "/projects", label: "PROJETOS" },
+  { path: "/", label: "Página Inicial" },
+  { path: "/about", label: "Sobre" },
+  { path: "/contacts", label: "Contatos" },
+  { path: "/projects", label: "Projetos" },
 ];

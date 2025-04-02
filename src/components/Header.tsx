@@ -47,6 +47,7 @@ export function Header() {
       {/* Header Mobile */}
       <nav
         className={clsx(
+          Alexandria.className,
           "w-full p-2 flex flex-col sm:hidden space-y-6 items-center justify-center  bg-neutral-900",
           isMenuOpen ? "relative" : "fixed top-0 z-1 "
         )}
@@ -68,7 +69,7 @@ export function Header() {
                   "relative inline-flex items-center px-2 py-2 transition-colors text-center after:content-[''] after:pointer-events-none after:absolute after:left-[-2.5rem] after:top-1/2 after:-translate-y-1/12 after:w-10 after:h-10 after:bg-[url('/cursor.svg')] after:bg-contain after:bg-no-repeat after:opacity-100 after:transition-opacity after:duration-300 after:animate-bounce after:z-10"
                 )}
               >
-                {activeLink.label}
+                {activeLink.label.toUpperCase()}
               </Link>
             )}
           </div>
@@ -88,6 +89,7 @@ export function Header() {
                 <Link
                   key={href}
                   href={href}
+                  onClick={HandleToggleMenu}
                   className={clsx(
                     "relative inline-flex items-center px-2 py-2 transition-colors text-center",
                     isActive(href)
@@ -95,7 +97,7 @@ export function Header() {
                       : "text-gray-400 hover:text-gray-300 after:content-none"
                   )}
                 >
-                  {label}
+                  {label.toUpperCase()}
                 </Link>
               ))}
           </SheetContent>
@@ -116,7 +118,7 @@ export function Header() {
                 : "text-gray-400 hover:text-gray-300 after:content-none"
             )}
           >
-            {label}
+            {label.toUpperCase()}
           </Link>
         ))}
       </nav>
