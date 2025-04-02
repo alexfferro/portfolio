@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import localFont from "next/font/local";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
@@ -15,13 +14,8 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { Alexandria } from "@/lib/constants";
 
-const Alexandria = localFont({
-  src: "../fonts/alexandria.ttf",
-  display: "swap",
-  style: "regular",
-  variable: "--alexandria",
-});
 const LINKS = [
   { href: "/", label: "HOME" },
   { href: "/projects", label: "PROJECTS" },

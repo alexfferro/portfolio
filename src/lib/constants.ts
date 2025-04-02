@@ -1,3 +1,5 @@
+import localFont from "next/font/local";
+
 export const SERVICES = [
   {
     title: "Product Design & UI/UX",
@@ -89,3 +91,10 @@ export const ROUTES = [
   { path: "/contacts", label: "Contatos" },
   { path: "/projects", label: "Projetos" },
 ];
+
+export const Alexandria = localFont({
+  src: "../fonts/alexandria.ttf",
+  display: "swap",
+  style: "regular",
+  variable: "--alexandria",
+});

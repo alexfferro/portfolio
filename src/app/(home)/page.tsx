@@ -4,6 +4,8 @@ import { TestimonialsCards } from "@/components/testimonials-card";
 import { Button } from "@/components/ui/button";
 import { SERVICES, TESTIMONIALS, WORKS } from "@/lib/constants";
 import Image from "next/image";
+import { Facebook, Instagram, Twitter } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -84,6 +86,54 @@ export default function Home() {
               post={post}
             />
           ))}
+        </div>
+      </div>
+      {/* CV */}
+      <div className="flex flex-col sm:flex-row items-center justify-center space-y-12 mt-20 p-4">
+        <div className="space-y-5">
+          <h2 className="font-bold text-3xl md:text-6xl max-w-2xl">
+            Just to remind you, I’m Omar. A{" "}
+            <span className="text-muted-foreground">UX Researcher</span> &{" "}
+            <span className="text-muted-foreground">Product Designer</span> from
+            Manhattan, New York.
+          </h2>
+          <p className="text-lg text-muted-foreground">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar
+            sed interdum vitae est arcu fringilla posuere. Suspendisse diam
+            sagittis quam elementum ac.
+          </p>
+          <p className="text-lg text-muted-foreground">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar
+            sed interdum vitae est arcu fringilla posuere. Suspendisse diam
+            sagittis quam elementum ac.
+          </p>
+        </div>
+        <div className="flex flex-col gap-3 items-center justify-center space-y-6 w-full">
+          <Image
+            alt="a man with a joystick, selecting a game character"
+            priority
+            height={500}
+            width={500}
+            src={"/home.svg"}
+          />
+          <div className="flex items-center gap-12">
+            <Link href="#">
+              <Twitter />
+            </Link>
+            <Link href="#">
+              <Instagram />
+            </Link>
+            <Link href="#">
+              <Facebook />
+            </Link>
+          </div>
+          <Button
+            variant="outline"
+            size="lg"
+            className="rounded-full font-semibold text-lg"
+          >
+            Download CV
+          </Button>
         </div>
       </div>
     </div>
